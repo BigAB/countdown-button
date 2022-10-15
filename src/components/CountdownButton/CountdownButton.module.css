@@ -1,0 +1,48 @@
+.button {
+  box-sizing: border-box;
+  background: papayawhip;
+  border-radius: 8px;
+  border: 1px solid black;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  width: 100%;
+  max-width: 26rem;
+  transition: background-color 0.4s, color 0.2s;
+
+  --shake: 0px;
+}
+
+.button:active,
+.button:hover {
+  background-color: ivory;
+}
+.button.button:active {
+  color: rebeccapurple;
+}
+
+.button.countingdown {
+  animation: horizontal-shaking 0.15s infinite;
+}
+
+.button.launching {
+  background-color: palevioletred;
+  color: aliceblue;
+}
+
+@keyframes horizontal-shaking {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(var(--shake));
+  }
+  50% {
+    transform: translateX(calc(var(--shake) * -1));
+  }
+  75% {
+    transform: translateX(var(--shake));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
